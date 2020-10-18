@@ -1,9 +1,41 @@
 # LockScreen
-AppleScript for automator for the use of the Application Template and once compiled installed in Applications folder.
+AppleScript for automator for the use of the Application Template and once compiled installed in Applications folder. NOTE: This code is to be called by HotKey https://apps.apple.com/us/story/id1509582362 or any key mapping software that can call Applications in MacOS.
 
 # Apple Script Introduction
+I wanted to create an Automator App so that App could be could be called by an app called HotKey which wold allow the user to map hot keys to apps and other resources.  
 
-* To be called by HotKey: https://apps.apple.com/us/story/id1509582362
+Having come from a Windows background I loved the functionality of locking my laptop.  Windows Key + L. 
+
+That was a no brainer.  
+
+I finally took the time to figure out how to automate the same functionality and map it to Cmd + L. 
+
+The easiest thing was for the HotKey app to just launch an app. 
+
+I took Automator and started looking for way to articulate this in Apple Script.  
+
+I found this page:
+Post 1:
+http://www.geekpandit.com/mac-os/how-to-lock-screen-in-mac-os-using-applescript/
+
+But the content was old and explained the set up with UI features that where no longer there. 
+
+But it was a start to get the juices flowing. 
+
+Automator has a record feature so I started recording and when I was done I looked at the sys obj name. 
+
+Apple menu was on.  
+
+Lock screen was another.  
+
+I felt like I could work with that and move forward and started doing more specific searches on Google. 
+
+I found this next valuable like for piecing it together: 
+Post 2:
+https://apple.stackexchange.com/questions/381453/applescript-for-locking-the-screen-in-catalina
+* Something valuable for the set up of the app was I had to set it up as an app not any of the other things that Automator offered this was a requirement of HotKey so it would be callable. 
+* Second Post a had it all set up as a Service which in 2020 nomenclature is a Quick Action. (No idea why they changed.)
+* But as I mentioned the Quick Action would not get me there because the assembly delivered was not for suitable to To be called by HotKey: https://apps.apple.com/us/story/id1509582362
 * But something that was invaluable because I didn’t know how to use Automator was the line on Post 1 that stated: Type “Run AppleScript” as shown in below Image and Double click to open.
 * Because in setting up Automator to do it’s thing. I had no idea that I would need an AppleScript action to add the script instruction.  So I added a Run Apple Script action. 
 * I also would not have known to make sure to continue the set up by: Check the checkbox with title “Service receives no input in any application“.
